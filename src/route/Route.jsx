@@ -77,7 +77,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/payments/:id',
-                element: <PaymentAndMore></PaymentAndMore>,
+                element: <PrivateRoute><PaymentAndMore></PaymentAndMore></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://zayaan-server.vercel.app/getFlight/${params.id}`)
             }
         ]
