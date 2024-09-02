@@ -26,7 +26,7 @@ const GetFlight = ({ c, adults, child, date, from, to, total, count }) => {
         console.log('Click Korse Fastest eee')
     }
     return (
-        <div className="my-5 min-h-screen">
+        <div className="mb-5 min-h-screen">
             <div className="flex gap-5 justify-between bg-white mt-5 p-3 rounded-md">
                 <div className="w-1/2">
                     <div className={`${cheap ? 'bg-[#ebf0f4]' : ''} p-3 rounded`}>

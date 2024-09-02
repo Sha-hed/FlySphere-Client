@@ -27,7 +27,7 @@ const Flight = () => {
             <div className="bg-[#ebf0f4]">
             </div>
             <div className="bg-[#ebf0f4]">
-                <div className="max-w-6xl mx-auto flex justify-around">
+                <div className="max-w-7xl mx-auto flex justify-around">
                     <GetFlight
                         c={c}
                         adults={adults}

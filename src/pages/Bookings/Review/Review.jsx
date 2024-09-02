@@ -9,7 +9,7 @@ const Review = () => {
     console.log(date);
     const journeyTime = moment(date).format('dddd, DD MMM,YYYY')
     console.log(journeyTime);
-    const { Airline, image, From, To, Departure_Time, Arrival_Time, Total_Time, Total_Stops } = flight
+    const { Airline, Flight_Name, image, From, To, Departure_Time, Arrival_Time, Total_Time, Total_Stops } = flight
     let stops;
     if (Total_Stops === 0) {
         stops = 'Non-Stop'
@@ -27,6 +27,7 @@ const Review = () => {
             <div className="w-[720px] bg-white rounded pb-2">
                 <div className="flex justify-between">
                     <h1 className="text p-4 font-semibold text-[#00026e]">{From}-{To}</h1>
+                    <h1 className="text p-4 font-semibold text-[#f46a07]">{Flight_Name}</h1>
                     <h1 className="text p-4 font-semibold text-[#00026e]">({c})</h1>
                 </div>
                 <hr className="w-[95%] mx-auto" />

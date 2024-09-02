@@ -6,7 +6,7 @@ import { IoMdEyeOff } from "react-icons/io";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { FaPhone } from "react-icons/fa6";
-import Go from '../../assets/images/Go.png'
+import Go from '../../assets/images/logo2.jpg'
 import AuthHook from '../../hook/AuthHook';
 import toast from 'react-hot-toast';
 import { FaArrowLeft } from "react-icons/fa6";
@@ -47,7 +47,7 @@ const Register = () => {
     return (
         <div className='bg-gray-200 py-10'>
             <div className='w-[600px] px-5 py-10 mx-auto bg-white shadow-xl border-t-4 border-blue-900 rounded'>
-                <div className="w-36 flex items-center">
+                <div className="w-12 flex items-center gap-5">
                     <a onClick={() => navigate(-1)} className='text-3xl cursor-pointer'><FaArrowLeft /></a>
                     <img src={Go} alt="" />
                 </div>

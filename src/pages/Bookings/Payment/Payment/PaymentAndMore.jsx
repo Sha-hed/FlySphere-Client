@@ -17,7 +17,7 @@ const PaymentAndMore = () => {
 
     //For Fare Data
     const flight = useLoaderData();
-    const { image, Fare, From, To, } = flight
+    const {Flight_Name, image, Fare, From, To, } = flight
     const tfare = Fare * total;
     const tax = 150;
     const subTotal = tfare + tax
@@ -48,7 +48,10 @@ const PaymentAndMore = () => {
                         <h1 className='text-[#00026e] font-medium'>{From}-{To}</h1>
                     </div>
                     <hr className='my-4 w-[96%] mx-auto  px-5' />
-                    <h1 className='text-[#00026e] font-semibold px-5'>Fare Summary</h1>
+                    <div className='flex justify-between'>
+                        <h1 className='text-[#00026e] font-semibold px-5'>Fare Summary</h1>
+                        <h1 className='text-[#f46a07] font-semibold px-5'>{Flight_Name}</h1>
+                    </div>
                     <h1 className='px-5'>Adult({total}  travelers)</h1>
                     <div className='flex justify-between px-5'>
                         <h1>Base Fare</h1>

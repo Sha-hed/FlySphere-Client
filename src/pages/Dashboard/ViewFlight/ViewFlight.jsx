@@ -57,7 +57,7 @@ const ViewFlight = () => {
             </tr>
             {
               flights.map((flight, id) => <tr key={id}>
-                <td className="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">{id + 1}</td>
+                <td className="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-[#f46a07] font-semibold">{flight.Flight_Name}</td>
                 <td className="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-black ">{flight.Airline}</td>
                 <td className="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">{flight.From} - {flight.To}</td>
                 <td className="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">{flight.Departure_Time} - {flight.Arrival_Time}</td>

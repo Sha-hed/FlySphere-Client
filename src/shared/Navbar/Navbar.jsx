@@ -3,7 +3,7 @@ import plane from '../../assets/images/Plane2.png'
 import { useState } from "react";
 import { RiMenu2Fill } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
-import Go from '../../assets/images/Go.png'
+import Go from '../../assets/images/logo2.jpg'
 import Home from '../../assets/images/Home.png'
 import AuthHook from "../../hook/AuthHook";
 import toast from "react-hot-toast";
@@ -112,9 +112,9 @@ const Navbar = () => {
                 </div>
             </div>
         </div> */}
-            <div className="max-w-6xl mx-auto flex justify-between items-center border-b">
-                <div>
-                    <div className="w-36">
+            <div className="max-w-6xl mx-auto flex justify-between items-center border-b py-3">
+                <div className="">
+                    <div className="w-12">
                         <img src={Go} alt="" />
                     </div>
                 </div>
