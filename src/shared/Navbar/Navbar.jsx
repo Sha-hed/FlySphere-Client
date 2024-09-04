@@ -112,7 +112,7 @@ const Navbar = () => {
                 </div>
             </div>
         </div> */}
-            <div className="max-w-6xl mx-auto flex justify-between items-center border-b py-3">
+            <div className="max-w-6xl mx-auto flex justify-between items-center border-b py-3 px-3">
                 <div className="">
                     <div className="w-12">
                         <img src={Go} alt="" />

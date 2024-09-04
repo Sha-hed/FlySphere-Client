@@ -19,7 +19,7 @@ const MyBookings = () => {
         <div className="bg-[#ebf0f4] min-h-screen">
             <div className=" max-w-7xl mx-auto">
                 <h1 className="pt-10 mb-10 text-center font-bold text-2xl uppercase underline text-[#00026e]">My Bookings</h1>
-                <div className="flex justify-center items-center">
+                <div className="max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-5 items-center mx-auto">
                     {
                         ticket?.map(ticket =>
                             <TicketCard
@@ -29,6 +29,7 @@ const MyBookings = () => {
                     }
                 </div>
             </div>
+
         </div>
     );
 };

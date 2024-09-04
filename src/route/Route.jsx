@@ -14,6 +14,7 @@ import UpdateDetails from "../pages/Dashboard/UpdateDetails/UpdateDetails";
 import PrivateRoute from "./PrivateRoute";
 import PaymentAndMore from "../pages/Bookings/Payment/Payment/PaymentAndMore";
 import MyBookings from "../pages/MyBookings/MyBookings/MyBookings";
+import ViewDetails from "../components/ViewDetails";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -38,6 +39,11 @@ export const router = createBrowserRouter([
             {
                 path: '/myBookings',
                 element: <MyBookings></MyBookings>
+            },
+            {
+                path: '/downloadPDF/:id',
+                loader: ({params})=> fetch(`http://localhost:5000/specificBookedFlight/${params.id}`),
+                element: <ViewDetails />
             },
             {
                 path: '/dashboard',

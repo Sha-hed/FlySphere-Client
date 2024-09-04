@@ -4,12 +4,20 @@ import Navbar from '../shared/Navbar/Navbar'
 
 const Main = () => {
     const location = useLocation();
+    console.log(location)
+    const isPrint = location.pathname.includes('downloadPDF')
+    console.log(isPrint)
     const isDash = location.pathname.includes('dashboard')
+    console.log('Dash Kina ',isDash)
+    const confused = (isPrint || isDash) || false;
     return (
         <div>
             {
-                isDash || <Navbar></Navbar>
+                confused || <Navbar></Navbar>
             }
+            {/* {
+                isDash  || <Navbar></Navbar>
+            } */}
             <Outlet></Outlet>
             {/* <Footer></Footer> */}
         </div>
