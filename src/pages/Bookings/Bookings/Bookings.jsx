@@ -17,7 +17,7 @@ const Bookings = () => {
     return (
         <DetailsContext.Provider value={flightDetails}>
             <div className="bg-[#ebf0f4]">
-                <div className="max-w-6xl mx-auto flex justify-between">
+                <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between">
                     <Review></Review>
                     <Fares></Fares>
                 </div>

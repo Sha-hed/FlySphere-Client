@@ -27,14 +27,14 @@ const GetFlight = ({ c, adults, child, date, from, to, total, count }) => {
     }
     return (
         <div className="mb-5 min-h-screen">
-            <div className="flex gap-5 justify-between bg-white mt-5 p-3 rounded-md">
-                <div className="w-1/2">
+            <div className="flex flex-col md:flex-row gap-5 justify-between bg-white mt-5 p-3 rounded-md">
+                <div className="w-full md:w-1/2">
                     <div className={`${cheap ? 'bg-[#ebf0f4]' : ''} p-3 rounded`}>
                         <button onClick={handleCheap} className="text-[#00026e] font-semibold">Cheapest</button>
                         <p className="text-sm text-[#6e6b7b]">{`${cheap? "Showing the cheapest flights in ascending order":"Click to see the cheapest flights in ascending order"}`}</p>
                     </div>
                 </div>
-                <div className="w-1/2">
+                <div className="w-full md:w-1/2">
                     <div className={`${fast ? 'bg-[#ebf0f4]' : ''} p-3 rounded`}>
                         <button onClick={handleFast} className="text-[#00026e] font-semibold">Fastest</button>
                         <p className="text-sm text-[#6e6b7b]">{`${fast?"Showing the fastest flights in ascending order":"Click to see the fastest flights in ascending order"}`}</p>

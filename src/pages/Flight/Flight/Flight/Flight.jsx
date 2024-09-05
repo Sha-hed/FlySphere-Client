@@ -25,9 +25,7 @@ const Flight = () => {
                 setCount={setCount}
             ></Form>
             <div className="bg-[#ebf0f4]">
-            </div>
-            <div className="bg-[#ebf0f4]">
-                <div className="max-w-7xl mx-auto flex justify-around">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-around">
                     <GetFlight
                         c={c}
                         adults={adults}

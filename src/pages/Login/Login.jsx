@@ -52,7 +52,7 @@ const Login = () => {
     }
     return (
         <div className='bg-gray-200 py-10'>
-            <div className='w-[600px] px-5 py-10 mx-auto bg-white shadow-xl border-t-4 border-blue-900 rounded'>
+            <div className='w-[90%] md:w-[600px] px-5 py-10 mx-auto bg-white shadow-xl border-t-4 border-blue-900 rounded'>
                 <div className='p-3 border-2 text-center'>
                     <h1 onClick={handleGoogle} className='cursor-pointer flex justify-center items-center text-lg gap-2 font-semibold'><FcGoogle />Login With Google</h1>
                 </div>
@@ -79,7 +79,7 @@ const Login = () => {
                                     type={open ? 'text' : 'password'}
                                     placeholder="some@pass#123" {...register("Password", { required: true })} />
                             </div>
-                            <div className='relative top-[17px] left-[250px]'>
+                            <div className='relative top-[17px] left-1/4 md:left-[250px]'>
                                 {
                                     open ? <IoMdEyeOff onClick={() => setOpen(!open)} className='text-xl' /> : <IoEye onClick={() => setOpen(!open)} className='text-xl' />
                                 }

@@ -2,7 +2,7 @@ import { BiSolidPhoneCall } from "react-icons/bi";
 import { FaFacebookMessenger } from "react-icons/fa";
 const Help = () => {
     return (
-        <div className="sticky top-0 z-5 flex flex-col w-[250px] h-[200px] border-2 my-5">
+        <div className="sticky top-0 z-5 flex flex-col w-3/4 md:w-[250px] h-[200px] border-2 my-5 mx-auto md:mx-0">
             <div className="h-[60px] bg-gradient-to-r from-sky-500 to-indigo-500">
                 <h1 className="text-white font-semibold p-4">We're here for you 24/7</h1>
             </div>

@@ -11,6 +11,8 @@ import Dashboard from '../../assets/images/Dashboard.png';
 import Booking from '../../assets/images/booking.png';
 import Admin from "../../hook/Admin";
 import BookedEmail from "../../hook/BookedEmail";
+import { GoSignOut } from "react-icons/go";
+import { IoMdLogIn } from "react-icons/io";
 const Navbar = () => {
     const [isAdmin] = Admin();
     const [isBooked, refetch] = BookedEmail();
@@ -24,13 +26,21 @@ const Navbar = () => {
                     duration: 3000,
                     position: 'top-right',
                 });
+                setOpen(!open)
                 navigate('/')
                 console.log('User LoggedOut Successfully ', result.user)
             })
             .catch(error => console.log(error))
     }
+    const handleUlClick = () => {
+        setOpen(!open)
+    }
+    const handleLogin = () => {
+        setOpen(!open)
+        navigate('/login')
+    }
     const links = <>
-        <ul className="block md:flex gap-5">
+        <ul onClick={handleUlClick} className="block md:flex gap-5">
             <li className={`font-bold text-lg text-blue-900 flex ${open ? 'hover:bg-gray-200 hover:rounded' : ''}`}><NavLink to='/'>
                 <div className="flex justify-center items-center gap-2">
                     <div className="w-6">
@@ -137,8 +147,28 @@ const Navbar = () => {
                     }
                     {
                         open && (
-                            <div className="absolute top-[69px] w-1/2  z-50 left-0 duration-1000 p-5 bg-gray-400 transition-all">
+                            <div className="absolute top-[69px] w-full min-s-screen  z-50 left-0 duration-1000 p-5 bg-gray-400 transition-all">
                                 {links}
+                                {
+                                    user ? (
+                                        <li onClick={handleSignOut} className={`font-bold text-lg text-blue-900 flex ${open ? 'hover:bg-gray-200 hover:rounded' : ''}`}>
+                                            <div className="flex justify-center items-center gap-2">
+                                                <div className="w-6">
+                                                    <GoSignOut />
+                                                </div>
+                                                Log Out
+                                            </div>
+                                        </li>
+                                    ) : (<li onClick={handleLogin} className={`font-bold text-lg text-blue-900 flex ${open ? 'hover:bg-gray-200 hover:rounded' : ''}`}>
+                                        <div className="flex justify-center items-center gap-2">
+                                            <div className="w-6">
+                                                <IoMdLogIn />
+                                            </div>
+                                            Sign In
+                                        </div>
+                                    </li>
+                                    )
+                                }
                             </div>
                         )
                     }

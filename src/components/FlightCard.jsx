@@ -30,8 +30,8 @@ const FlightCard = ({ flight, c, adults, child, date, from, to, total }) => {
         stops = '2-St'
     }
     return (
-        <div className="flex rounded-xl">
-            <div className="h-[150px] w-[700px] flex mt-5 pl-5 py-5 bg-white">
+        <div className="flex flex-col md:flex-row rounded-xl mx-2 md:mx-0">
+            <div className="h-[150px] w-full md:w-[700px] flex mt-5 pl-5 py-5 bg-white">
                 {/* Plane Pic */}
                 <div className="w-28 my-5">
                     <div className="w-28">
@@ -39,7 +39,7 @@ const FlightCard = ({ flight, c, adults, child, date, from, to, total }) => {
                     </div>
                 </div>
                 {/* AirLine Name */}
-                <div className="w-[200px] m-5 py-2">
+                <div className="hidden md:flex w-[200px] m-5 py-2">
                     <h1 className="text-xl">{Airline}</h1>
                 </div>
                 {/* Departure Section */}
@@ -62,7 +62,7 @@ const FlightCard = ({ flight, c, adults, child, date, from, to, total }) => {
                     <h1 className="text-[#00026e] font-semibold mx-1 text-[12px]">{timeCalc}</h1>
                 </div>
             </div>
-            <div className="h-[150px] w-[250px] flex flex-col justify-end items-center mt-5 px-5 py-5 bg-[#ecf3fe] border-l-0 border-2">
+            <div className="h-[150px] w-full md:w-[250px] flex flex-col justify-end items-center mt-0 md:mt-5 px-5 py-5 bg-[#ecf3fe] border-l-0 border-2">
                 <h1 className="text-[#f46a07] font-semibold">{Flight_Name}</h1>
                 <h1 className="font-medium text-[#00026e] my-2 text-lg">BDT {Fare}</h1>
                 <div className="bg-[#ffc107] rounded px-1">

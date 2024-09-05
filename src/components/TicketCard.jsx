@@ -27,7 +27,7 @@ const TicketCard = ({ ticket }) => {
                             <p>Flight Time : {Total_Time}min</p>
                     </div>
                     <div className="card-actions justify-end mt-5">
-                    <Link to={`/downloadPDF/${id}`} className='rounded-xl bg-blue-950 text-white px-5 py-2 hover:underline'>DownLoad Ticket</Link>
+                    <Link to={`/downloadPDF/${id}`} className='rounded-xl bg-blue-950 text-white px-5 py-2 hover:underline'>Download Ticket</Link>
                         {/* <button className="btn btn-primary">Learn now!</button> */}
                     </div>
                 </div>

@@ -94,20 +94,19 @@ const CheckOutForm = () => {
 
     return (
         <div>
-            <div className="bg-gray-50 p-5 rounded-xl ml-52 border-t-4 border-blue-900 shadow-xl">
+            <div className="bg-gray-50 p-5 rounded-xl ml-1 md:ml-52 border-t-4 border-blue-900 shadow-xl">
                 <h1 className="text-[#00026e] text-xl font-semibold mb-10 text-center underline">Enter Your Card Information</h1>
-                <div className=" flex flex-col w-1/2">
+                <div className="flex flex-col w-full md:w-1/2">
                     <label className="text-[#00026e] font-semibold" htmlFor="">Email</label>
                     <input readOnly value={email} className="text-black border p-2 rounded-lg my-2 outline-none" type="email" name="email" id="" />
-
                 </div>
-                <div className="flex flex-col w-1/2">
+                <div className="flex flex-col w-full md:w-1/2">
                     <label className="text-[#00026e] font-semibold" htmlFor="">Phone Number</label>
                     <input readOnly value={phone} className="border p-2 rounded-lg my-2 outline-none" type="text" name="Number" id="" />
                 </div>
                 <h1 className="mb-3 text-[#00026e] font-semibold">Card Number</h1>
                 <form onSubmit={handleSubmit}>
-                    <CardElement className="flex flex-col w-[500px]"
+                    <CardElement className="w-[90%] md:w-[500px] flex flex-col mx-auto md:mx-0"
                         options={{
                             style: {
                                 base: {

@@ -29,9 +29,9 @@ const Form = ({ c, setC, adults, setAdults, child, setChild, setDate, setFrom, s
         // console.log(total)
     }
     return (
-        <div className="max-w-7xl mx-auto my-10">
-            <div className="flex justify-between">
-                <div className="border-2 rounded-2xl p-3 w-[200px]">
+        <div className="max-w-7xl mx-auto my-5 md:my-10">
+            <div className="flex flex-col md:flex-row justify-between gap-y-5 md:gap-y-0">
+                <div className="border-2 rounded-2xl p-3 text-center w-3/4 md:w-[200px] mx-auto md:mx-0">
                     <h1 className="uppercase font-semibold mb-2">From </h1>
                     <select onChange={(e) => setFrom(e.target.value)} className="text-[#00026e] font-bold outline-none">
                         {/* {airports.map((airport, index) => (
@@ -49,7 +49,7 @@ const Form = ({ c, setC, adults, setAdults, child, setChild, setDate, setFrom, s
                         <option value="Sylhet">Sylhet</option>
                     </select>
                 </div>
-                <div className="border-2 rounded-2xl p-3 w-[200px]">
+                <div className="border-2 rounded-2xl p-3 text-center w-3/4 md:w-[200px] mx-auto md:mx-0">
                     <h1 className="uppercase font-semibold mb-2">To </h1>
                     <select onChange={(e) => setTo(e.target.value)} className="text-[#00026e] font-bold outline-none">
                         {/* {airports.map((airport, index) => (
@@ -67,17 +67,17 @@ const Form = ({ c, setC, adults, setAdults, child, setChild, setDate, setFrom, s
                         <option value="Sylhet">Sylhet</option>
                     </select>
                 </div>
-                <div className="border-2 rounded-2xl p-3 w-[200px]">
+                <div className="border-2 rounded-2xl p-3 text-center w-3/4 md:w-[200px] mx-auto md:mx-0">
                     <h1 className="uppercase font-semibold mb-2">Journey Date </h1>
                     <input onChange={(e) => setDate(e.target.value)} className="text-[#00026e] font-bold" type="date" name="" id="" />
                 </div>
-                <div className="relative border-2 rounded-2xl p-3 w-[200px] cursor-pointer">
+                <div className="relative border-2 rounded-2xl p-3  cursor-pointer text-center w-3/4 md:w-[200px] mx-auto md:mx-0">
                     <button onClick={() => setA(true)} className="uppercase font-semibold mb-2">Traveller, Class </button>
                     <h1 className="text-[#00026e] font-bold">{total} traveller</h1>
                     <h1>{c}</h1>
                     {
                         a && (
-                            <div className="z-10 rounded-xl bg-white shadow-xl p-3 absolute top-[110px] right-0 w-[250px]">
+                            <div className="z-10 rounded-xl bg-gray-300 shadow-xl p-3 absolute  -bottom-3/4 md:top-[110px] right-0 w-full md:w-[250px]  h-[320px]">
                                 <div className="flex justify-between gap-5 my-5 border p-3 rounded">
                                     <label>Adult</label>
                                     <input placeholder="1"
@@ -109,7 +109,7 @@ const Form = ({ c, setC, adults, setAdults, child, setChild, setDate, setFrom, s
                         )
                     }
                 </div>
-                <div className="border p-3 w-[200px] flex justify-center items-center bg-[#fdcc02] rounded-xl">
+                <div className="border p-3 flex justify-center items-center bg-[#fdcc02] rounded-xl w-3/4 md:w-[200px] mx-auto md:mx-0">
                     <button onClick={handleSearch} className="font-bold text-xl">Modify Search</button>
                 </div>
             </div>

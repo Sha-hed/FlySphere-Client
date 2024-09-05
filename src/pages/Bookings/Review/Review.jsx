@@ -22,9 +22,9 @@ const Review = () => {
     }
 
     return (
-        <div className="my-5">
-            <h1 className="text-[#00026e] text-xl font-semibold my-5">Review Your Booking</h1>
-            <div className="w-[720px] bg-white rounded pb-2">
+        <div className="my-2 md:my-5">
+            <h1 className="text-[#00026e] text-xl font-semibold my-5 pl-2 md:pl-0">Review Your Booking</h1>
+            <div className="w-full md:w-[720px] bg-white rounded pb-2">
                 <div className="flex justify-between">
                     <h1 className="text p-4 font-semibold text-[#00026e]">{From}-{To}</h1>
                     <h1 className="text p-4 font-semibold text-[#f46a07]">{Flight_Name}</h1>
@@ -56,7 +56,7 @@ const Review = () => {
                     </div>
                 </div>
             </div>
-            <h1 className="text-[#00026e] text-xl font-semibold my-5">Enter Traveller Details</h1>
+            <h1 className="text-[#00026e] text-xl font-semibold my-5 pl-2 md:pl-0">Enter Traveller Details</h1>
             <PassengerDetails></PassengerDetails>
         </div>
     );

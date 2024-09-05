@@ -10,7 +10,7 @@ const Fares = () => {
     const charge = 350;
     const pay = tax + subTotal + charge;
     return (
-        <div className="w-[350px] bg-white pt-10 mt-20 h-[493px] sticky top-0 border flex flex-col space-y-4 rounded">
+        <div className="w-full md:w-[350px] bg-white pt-10 mt-5 md:mt-20 h-[493px] sticky top-0 border flex flex-col space-y-4 rounded mb-5 md:mb-0">
             <div className='flex justify-center items-center px-5'>
                 <div className='w-5'>
                     <img src={plane} alt="" />

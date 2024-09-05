@@ -60,13 +60,13 @@ const PassengerDetails = () => {
                 </div>
                 <div className="my-5 flex flex-col w-1/2">
                     <label htmlFor="">Last Name</label>
-                    <input onChange={(e) => setLastName(e.target.value)} className="border p-2 rounded-lg my-2 outline-none" type="text" name="lastName" id="" />
+                    <input onChange={(e) => setLastName(e.target.value)} className="border p-2 rounded-lg my-2 outline-none mt-8 md:mt-0" type="text" name="lastName" id="" />
                 </div>
             </div>
             <div className="flex gap-5">
                 <div className=" flex flex-col w-1/2">
                     <label htmlFor="">Nationality</label>
-                    <select onChange={(e) => console.log(e.target.value)} className="border p-2 rounded-lg my-2 outline-none" name="" id="">
+                    <select onChange={(e) => console.log(e.target.value)} className="border p-2 rounded-lg my-2 outline-none mt-8 md:mt-0" name="" id="">
                         <option value="">Select Nationality</option>
                         <option value="Bangladeshi">Bangladeshi</option>
                     </select>

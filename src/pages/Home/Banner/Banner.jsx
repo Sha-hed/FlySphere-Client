@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
         <div>
-            <div className='relative banner h-[600px] bg-cover object-fit flex flex-col justify-center items-center'>
+            <div className='relative banner h-[800px] md:h-[600px] bg-cover object-fit flex flex-col justify-center items-center'>
                 <div className='flex justify-center items-center gap-2 -mb-5 z-10 w-[150px] text-center rounded-xl bg-white shadow-xl text-black font-bold p-3'>
                     <div className='w-6'>
                         <img src={plane} alt="" />
                     </div>
                     <h1 className='text-blue-900 text-xl'>Flight</h1>
                 </div>
-                <div className='relative flex gap-5 bg-white shadow-xl text-black p-12 rounded-xl'>
+                <div className='relative flex flex-col md:flex-row gap-5 bg-white shadow-xl text-black p-12 rounded-xl'>
                     <div className='w-[220px] border-2 p-3 rounded-xl'>
                         <h1 className='uppercase'>From</h1>
                         <h1 className='font-bold text-blue-900 text-xl'>Dhaka</h1>

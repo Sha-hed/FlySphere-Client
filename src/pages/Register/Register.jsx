@@ -46,7 +46,7 @@ const Register = () => {
     console.log(errors);
     return (
         <div className='bg-gray-200 py-10'>
-            <div className='w-[600px] px-5 py-10 mx-auto bg-white shadow-xl border-t-4 border-blue-900 rounded'>
+            <div className='w-[90%] md:w-[600px] px-5 py-10 mx-auto bg-white shadow-xl border-t-4 border-blue-900 rounded'>
                 <div className="w-12 flex items-center gap-5">
                     <a onClick={() => navigate(-1)} className='text-3xl cursor-pointer'><FaArrowLeft /></a>
                     <img src={Go} alt="" />
@@ -105,7 +105,7 @@ const Register = () => {
                                         }
                                     })} />
                             </div>
-                            <div className='relative top-[17px] left-[250px]'>
+                            <div className='relative top-[17px] left-1/4 md:left-[250px]'>
                                 {
                                     open ? <IoMdEyeOff onClick={() => setOpen(!open)} className='text-xl' /> : <IoEye onClick={() => setOpen(!open)} className='text-xl' />
                                 }

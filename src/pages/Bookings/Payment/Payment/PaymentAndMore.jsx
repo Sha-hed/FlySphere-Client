@@ -30,11 +30,11 @@ const PaymentAndMore = () => {
 
     return (
         <div className="bg-[#ebf0f4] min-h-screen">
-            <div className="max-w-6xl mx-auto flex justify-between">
+            <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between">
                 <PassContext.Provider value={passDetails}>
                     <Payment></Payment>
                 </PassContext.Provider>
-                <div className="w-[350px] bg-white pt-10 mt-20 h-[493px] sticky top-0 border flex flex-col space-y-4 rounded">
+                <div className="w-full md:w-[350px] bg-white pt-10 mt-5 md:mt-20 h-[493px] sticky top-0 border flex flex-col space-y-4 rounded mb-5 md:mb-0">
                     <div className='flex justify-center items-center px-5'>
                         <div className='w-5'>
                             <img src={plane} alt="" />
