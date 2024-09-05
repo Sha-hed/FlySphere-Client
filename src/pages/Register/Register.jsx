@@ -97,7 +97,7 @@ const Register = () => {
                             <div className='flex flex-col w-full'>
                                 <label>Password</label>
                                 <input className='outline-none bg-transparent'
-                                    type={open ? 'text' : 'password'}
+                                    type="password"
                                     placeholder="some@pass#123" {...register("Password", {
                                         required: {
                                             value: true,
@@ -105,11 +105,11 @@ const Register = () => {
                                         }
                                     })} />
                             </div>
-                            <div className='relative top-[17px] left-1/4 md:left-[250px]'>
+                            {/* <div className='relative top-[17px] left-1/4 md:left-[250px]'>
                                 {
                                     open ? <IoMdEyeOff onClick={() => setOpen(!open)} className='text-xl' /> : <IoEye onClick={() => setOpen(!open)} className='text-xl' />
                                 }
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     {

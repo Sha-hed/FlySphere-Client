@@ -2,16 +2,19 @@ import { useState } from "react";
 import Form from "../Form/Form";
 import GetFlight from "../GetFlight/GetFlight";
 import Help from "../Help/Help";
-
+import moment from 'moment';
 const Flight = () => {
+    const dat = new Date();
+    const journeyTime = moment(dat).format('dddd, DD MMM,YYYY')
     const [count, setCount] = useState(0);
     const [c, setC] = useState('Economy');
     const [adults, setAdults] = useState(1);
     const [child, setChild] = useState(0);
-    const [date, setDate] = useState('');
+    const [date, setDate] = useState(journeyTime);
     const [from, setFrom] = useState('aa');
     const [to, setTo] = useState('bb');
     let total = adults + child;
+    console.log('Finding Dat man ', journeyTime);
     return (
         <div className="">
             <Form

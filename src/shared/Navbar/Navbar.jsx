@@ -13,6 +13,7 @@ import Admin from "../../hook/Admin";
 import BookedEmail from "../../hook/BookedEmail";
 import { GoSignOut } from "react-icons/go";
 import { IoMdLogIn } from "react-icons/io";
+import man from '../../assets/images/N.png'
 const Navbar = () => {
     const [isAdmin] = Admin();
     const [isBooked, refetch] = BookedEmail();
@@ -133,13 +134,20 @@ const Navbar = () => {
                         {links}
                     </div>
                 </div>
-                <div className="hidden md:block">
+                <div className="hidden md:flex justify-center items-center">
                     {
                         user ? <button onClick={handleSignOut} className="rounded bg-blue-950 text-white px-5 py-2">Sign Out</button>
                             : <Link to='/login' className="rounded bg-blue-950 text-white px-5 py-2">Sign In</Link>
                     }
                 </div>
-                <div className="flex-end md:hidden text-2xl">
+                <div className="flex-end justify-center items-center md:hidden text-2xl">
+                    {
+                        user && (<div className="avatar">
+                            <div className="w-10 rounded-full mr-3 border">
+                                <img src={man} />
+                            </div>
+                        </div>)
+                    }
                     {
                         open ? <button onClick={() => setOpen(!open)} className=""><AiOutlineClose /> </button>
                             : <button onClick={() => setOpen(!open)} className=""><RiMenu2Fill /></button>

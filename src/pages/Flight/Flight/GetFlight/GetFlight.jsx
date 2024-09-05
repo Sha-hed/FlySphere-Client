@@ -25,25 +25,26 @@ const GetFlight = ({ c, adults, child, date, from, to, total, count }) => {
         setFast(true);
         console.log('Click Korse Fastest eee')
     }
+    // console.log('Koyta ache dekbo ami ekn ',flights)
     return (
         <div className="mb-5 min-h-screen">
             <div className="flex flex-col md:flex-row gap-5 justify-between bg-white mt-5 p-3 rounded-md">
                 <div className="w-full md:w-1/2">
                     <div className={`${cheap ? 'bg-[#ebf0f4]' : ''} p-3 rounded`}>
                         <button onClick={handleCheap} className="text-[#00026e] font-semibold">Cheapest</button>
-                        <p className="text-sm text-[#6e6b7b]">{`${cheap? "Showing the cheapest flights in ascending order":"Click to see the cheapest flights in ascending order"}`}</p>
+                        <p className="text-sm text-[#6e6b7b]">{`${cheap ? "Showing the cheapest flights in ascending order" : "Click to see the cheapest flights in ascending order"}`}</p>
                     </div>
                 </div>
                 <div className="w-full md:w-1/2">
                     <div className={`${fast ? 'bg-[#ebf0f4]' : ''} p-3 rounded`}>
                         <button onClick={handleFast} className="text-[#00026e] font-semibold">Fastest</button>
-                        <p className="text-sm text-[#6e6b7b]">{`${fast?"Showing the fastest flights in ascending order":"Click to see the fastest flights in ascending order"}`}</p>
+                        <p className="text-sm text-[#6e6b7b]">{`${fast ? "Showing the fastest flights in ascending order" : "Click to see the fastest flights in ascending order"}`}</p>
                     </div>
                 </div>
             </div>
             <div>
                 {
-                    flights?.map(flight => <FlightCard key={flight._id}
+                    flights.length >0 ? (flights?.map(flight => <FlightCard key={flight._id}
                         c={c}
                         adults={adults}
                         child={child}
@@ -52,7 +53,12 @@ const GetFlight = ({ c, adults, child, date, from, to, total, count }) => {
                         to={to}
                         total={total}
                         flight={flight}>
-                    </FlightCard>)
+                    </FlightCard>)) : (<div className="space-y-2 flex flex-col items-center justify-center mt-5 md:mt-10">
+                        <h1 className="font-semibold text-lg text-[#6e6b7b]">Ooops !!!</h1>
+                        <h1 className="font-semibold text-lg text-[#6e6b7b]">There are no available Flights based on your query.</h1>
+                        <h1 className="font-semibold text-lg text-[#6e6b7b]">Please try clearing some filters or try searching again.</h1>
+                    </div>)
+
                 }
             </div>
         </div>

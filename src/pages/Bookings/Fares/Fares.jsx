@@ -3,7 +3,7 @@ import plane from '../../../assets/images/Plane2.png';
 import { DetailsContext } from '../Bookings/Bookings';
 const Fares = () => {
     const { flight, from, to, total } = useContext(DetailsContext);
-    const { Flight_Name, image, Fare } = flight
+    const { Flight_Name, From, To, image, Fare } = flight
     const tfare = Fare * total;
     const tax = 150;
     const subTotal = tfare + tax
@@ -21,7 +21,7 @@ const Fares = () => {
                 <div className='w-32'>
                     <img src={image} alt="" />
                 </div>
-                <h1 className='text-[#00026e] font-medium'>{from}-{to}</h1>
+                <h1 className='text-[#00026e] font-medium'>{From}-{To}</h1>
             </div>
             <hr className='my-4 w-[96%] mx-auto  px-5' />
             <div className='flex justify-between'>

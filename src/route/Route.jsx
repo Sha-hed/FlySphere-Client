@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/downloadPDF/:id',
-                loader: ({params})=> fetch(`http://localhost:5000/specificBookedFlight/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:5000/specificBookedFlight/${params.id}`),
                 element: <ViewDetails />
             },
             {
