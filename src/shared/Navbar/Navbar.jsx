@@ -136,6 +136,13 @@ const Navbar = () => {
                 </div>
                 <div className="hidden md:flex justify-center items-center">
                     {
+                        user && (<div className="avatar">
+                            <div className="w-10 rounded-full mr-3 border">
+                                <img src={man} />
+                            </div>
+                        </div>)
+                    }
+                    {
                         user ? <button onClick={handleSignOut} className="rounded bg-blue-950 text-white px-5 py-2">Sign Out</button>
                             : <Link to='/login' className="rounded bg-blue-950 text-white px-5 py-2">Sign In</Link>
                     }

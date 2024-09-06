@@ -10,12 +10,13 @@ import { FaPlane } from "react-icons/fa6";
 const Dashboard = () => {
     return (
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row text-white">
-            <div className="w-full flex flex-col md:flex-row md:block md:w-64 h-[300px] md:min-h-screen bg-[#374587]">
+            <div className="w-full flex flex-col md:flex-row md:block md:w-64 h-[320px] md:min-h-screen bg-[#374587]">
                 <div className="flex flex-col justify-center items-center mt-2 md:mt-10">
                     <div className="w-20 rounded-full">
                         <img className="rounded-full border-4 p-1" src={Admin} alt="" />
                     </div>
-                    <h1 className="uppercase text-2xl font-semibold my-1 md:my-10">Admin Dashboard</h1>
+                    <h1 className="uppercase text-2xl font-semibold my-1">Admin Dashboard</h1>
+                     <li className="list-none border py-1 px-2"><NavLink to={"/dashboard"}>Overview</NavLink></li>
                     <div className="w-full mx-auto my-3 border"></div>
                 </div>
                 <div className="flex flex-row md:flex-col">
@@ -48,7 +49,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex-1 bg-gray-200 text-black">
+            <div className="flex-1 text-black">
                 <Outlet></Outlet>
             </div>
         </div>

@@ -15,6 +15,7 @@ import PrivateRoute from "./PrivateRoute";
 import PaymentAndMore from "../pages/Bookings/Payment/Payment/PaymentAndMore";
 import MyBookings from "../pages/MyBookings/MyBookings/MyBookings";
 import ViewDetails from "../components/ViewDetails";
+import Chart from "../pages/Dashboard/Stat/Chart";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -42,7 +43,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/downloadPDF/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/specificBookedFlight/${params.id}`),
+                loader: ({ params }) => fetch(`https://zayaan-server.vercel.app/specificBookedFlight/${params.id}`),
                 element: <ViewDetails />
             },
             {
@@ -51,7 +52,7 @@ export const router = createBrowserRouter([
                 children: [
                     {
                         index: true,
-                        element: <ViewFlight></ViewFlight>
+                        element: <Chart />
                     },
                     {
                         path: 'viewFlight',
@@ -60,7 +61,7 @@ export const router = createBrowserRouter([
                     {
                         path: 'updateDetails/:id',
                         element: <UpdateDetails></UpdateDetails>,
-                        loader: ({ params }) => fetch(`http://localhost:5000/getFlight/${params.id}`)
+                        loader: ({ params }) => fetch(`https://zayaan-server.vercel.app/getFlight/${params.id}`)
                     },
                     {
                         path: 'bookedFlight',
@@ -79,12 +80,12 @@ export const router = createBrowserRouter([
             {
                 path: '/reviewBooking/:id',
                 element: <Bookings></Bookings>,
-                loader: ({ params }) => fetch(`http://localhost:5000/getFlight/${params.id}`)
+                loader: ({ params }) => fetch(`https://zayaan-server.vercel.app/getFlight/${params.id}`)
             },
             {
                 path: '/payments/:id',
                 element: <PrivateRoute><PaymentAndMore></PaymentAndMore></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/getFlight/${params.id}`)
+                loader: ({ params }) => fetch(`https://zayaan-server.vercel.app/getFlight/${params.id}`)
             }
         ]
     },

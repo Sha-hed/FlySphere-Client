@@ -49,7 +49,7 @@ const Review = () => {
                         <h1 className="flex justify-center"><FaLongArrowAltRight className="text-xl text-[#728db6]" /></h1>
                         <h1 className="text-[#728db6]">{Total_Time}min</h1>
                     </div>
-                    <div className="mr-5">
+                    <div className="text-end mr-5">
                         <h1 className="text-xl text-[#00026e] font-medium">{Arrival_Time}</h1>
                         <h1 className="text-sm text-[#00026e]">{journeyTime}</h1>
                         <h1>{To}</h1>
