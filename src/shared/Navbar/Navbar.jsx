@@ -4,6 +4,7 @@ import { useState } from "react";
 import { RiMenu2Fill } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
 import Go from '../../assets/images/logo2.jpg'
+import L1 from '../../assets/images/L1.png'
 import Home from '../../assets/images/Home.png'
 import AuthHook from "../../hook/AuthHook";
 import toast from "react-hot-toast";

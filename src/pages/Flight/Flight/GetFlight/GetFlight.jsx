@@ -53,12 +53,12 @@ const GetFlight = ({ c, adults, child, date, from, to, total, count }) => {
                         to={to}
                         total={total}
                         flight={flight}>
-                    </FlightCard>)) : (<div className="space-y-2 flex flex-col items-center justify-center mt-5 md:mt-10">
-                        <h1 className="font-semibold text-lg text-[#6e6b7b]">Ooops !!!</h1>
-                        <h1 className="font-semibold text-lg text-[#6e6b7b]">There are no available Flights based on your query.</h1>
-                        <h1 className="font-semibold text-lg text-[#6e6b7b]">Please try clearing some filters or try searching again.</h1>
+                    </FlightCard>)) : (<div className="mt-5 md:mt-10 space-y-2">
+                        <h1 className="font-semibold text-red-400 text-center">Ooops !!!</h1>
+                        <h1 className="font-semibold text-red-400 text-center">There are no available Flights based on your query.</h1>
+                        <h1 className="font-semibold text-red-400 text-center">Please try clearing some filters or try searching again.</h1>
                     </div>)
-
+// className="space-y-2 flex flex-col items-center justify-center mt-5 md:mt-10 mx-auto"
                 }
             </div>
         </div>

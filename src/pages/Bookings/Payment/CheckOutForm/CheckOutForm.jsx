@@ -22,7 +22,7 @@ const CheckOutForm = () => {
     const users = { price: pay }
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("https://zayaan-server.vercel.app/create-payment-intent", {
+        fetch("http://localhost:5000/create-payment-intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(users),
@@ -33,6 +33,7 @@ const CheckOutForm = () => {
             });
     }, []);
     const handleSubmit = async (event) => {
+        console.log('Payment Submit')
         // Block native form submission.
         event.preventDefault();
         if (!stripe || !elements) {

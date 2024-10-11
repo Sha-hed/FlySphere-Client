@@ -10,7 +10,7 @@ import { FaPlane } from "react-icons/fa6";
 const Dashboard = () => {
     return (
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row text-white">
-            <div className="w-full flex flex-col md:flex-row md:block md:w-64 h-[320px] md:min-h-screen bg-[#374587]">
+            <div className="w-full flex flex-col md:flex-row md:block md:w-64 h-[350px] md:min-h-screen bg-[#374587]">
                 <div className="flex flex-col justify-center items-center mt-2 md:mt-10">
                     <div className="w-20 rounded-full">
                         <img className="rounded-full border-4 p-1" src={Admin} alt="" />
