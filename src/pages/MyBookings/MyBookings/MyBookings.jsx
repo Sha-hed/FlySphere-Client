@@ -28,7 +28,7 @@ const MyBookings = () => {
                             </TicketCard>)
                     }
                 </div> */}
-                <div className="max-w-5xl mx-auto flex flex-wrap gap-5 justify-center">
+                <div className="max-w-5xl mx-auto flex flex-wrap gap-5 justify-center px-2 md:px-0">
                     {
                         ticket?.map(ticket =>
                             <TicketCard

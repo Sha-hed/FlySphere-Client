@@ -7,11 +7,10 @@ const TicketCard = ({ ticket }) => {
     const { Flight_Name, Airline, image, From, To, Departure_Time, Arrival_Time, Total_Time } = flight
     return (
         <div>
-            
-            <div className="card glass w-96">
+            <div className="card glass w-full md:w-96">
                 <figure>
                     <img
-                        style={{ border: '2px'}}
+                        style={{ border: '2px' }}
                         src={image}
                         alt="car!" />
                 </figure>
@@ -20,14 +19,14 @@ const TicketCard = ({ ticket }) => {
                     <h2 className="card-title">{Airline} | {Flight_Name}</h2>
                     <p className="text-black font-semibold">{Name}</p>
                     <div className='text-sm font-semibold'>
-                            <p className="">{Departure_Time} Departs from {From}</p>
-                            <p className="">{Arrival_Time} Lands in {To}</p>
-                        
-                            <p className="">{totalTraveller} Traveller</p>
-                            <p>Flight Time : {Total_Time}min</p>
+                        <p className="">{Departure_Time} Departs from {From}</p>
+                        <p className="">{Arrival_Time} Lands in {To}</p>
+
+                        <p className="">{totalTraveller} Traveller</p>
+                        <p>Flight Time : {Total_Time}min</p>
                     </div>
                     <div className="card-actions justify-end mt-5">
-                    <Link to={`/downloadPDF/${id}`} className='rounded-xl bg-blue-950 text-white px-5 py-2 hover:underline'>Download Ticket</Link>
+                        <Link to={`/downloadPDF/${id}`} className='rounded-xl bg-blue-950 text-white px-5 py-2 hover:underline'>Download Ticket</Link>
                         {/* <button className="btn btn-primary">Learn now!</button> */}
                     </div>
                 </div>

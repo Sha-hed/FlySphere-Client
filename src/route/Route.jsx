@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/downloadPDF/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/specificBookedFlight/${params.id}`),
+                loader: ({ params }) => fetch(`https://zayaan-server.vercel.app/specificBookedFlight/${params.id}`),
                 element: <ViewDetails />
             },
             {
@@ -61,7 +61,7 @@ export const router = createBrowserRouter([
                     {
                         path: 'updateDetails/:id',
                         element: <UpdateDetails></UpdateDetails>,
-                        loader: ({ params }) => fetch(`http://localhost:5000/getFlight/${params.id}`)
+                        loader: ({ params }) => fetch(`https://zayaan-server.vercel.app/getFlight/${params.id}`)
                     },
                     {
                         path: 'bookedFlight',
@@ -80,12 +80,12 @@ export const router = createBrowserRouter([
             {
                 path: '/reviewBooking/:id',
                 element: <Bookings></Bookings>,
-                loader: ({ params }) => fetch(`http://localhost:5000/getFlight/${params.id}`)
+                loader: ({ params }) => fetch(`https://zayaan-server.vercel.app/getFlight/${params.id}`)
             },
             {
                 path: '/payments/:id',
                 element: <PrivateRoute><PaymentAndMore></PaymentAndMore></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/getFlight/${params.id}`)
+                loader: ({ params }) => fetch(`https://zayaan-server.vercel.app/getFlight/${params.id}`)
             }
         ]
     },

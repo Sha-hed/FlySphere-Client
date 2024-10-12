@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from '../shared/Navbar/Navbar'
+import Footer from "../shared/Footer/Footer";
 // import Footer from '../shared/Footer/Footer'
 
 const Main = () => {
@@ -19,7 +20,9 @@ const Main = () => {
                 isDash  || <Navbar></Navbar>
             } */}
             <Outlet></Outlet>
-            {/* <Footer></Footer> */}
+            {
+                confused || <Footer/>
+            }
         </div>
     );
 };

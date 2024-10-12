@@ -9,12 +9,14 @@ import Home from '../../assets/images/Home.png'
 import AuthHook from "../../hook/AuthHook";
 import toast from "react-hot-toast";
 import Dashboard from '../../assets/images/Dashboard.png';
+import D1 from '../../assets/images/D1.png';
 import Booking from '../../assets/images/booking.png';
 import Admin from "../../hook/Admin";
 import BookedEmail from "../../hook/BookedEmail";
 import { GoSignOut } from "react-icons/go";
 import { IoMdLogIn } from "react-icons/io";
 import man from '../../assets/images/N.png'
+import { IoMenuSharp } from "react-icons/io5";
 const Navbar = () => {
     const [isAdmin] = Admin();
     const [isBooked, refetch] = BookedEmail();
@@ -41,6 +43,13 @@ const Navbar = () => {
         setOpen(!open)
         navigate('/login')
     }
+
+    const navlinks = <>
+        <li className="list-none ">Home</li>
+        <li className="list-none ">Flight</li>
+    </>
+
+
     const links = <>
         <ul onClick={handleUlClick} className="block md:flex gap-5">
             <li className={`font-bold text-lg text-blue-900 flex ${open ? 'hover:bg-gray-200 hover:rounded' : ''}`}><NavLink to='/'>
@@ -65,7 +74,7 @@ const Navbar = () => {
                     <li className={`font-bold text-lg text-blue-900 flex ${open ? 'hover:bg-gray-200 hover:rounded' : ''}`}><NavLink to='/dashboard'>
                         <div className="flex justify-center items-center gap-2">
                             <div className="w-6">
-                                <img src={Dashboard} alt="" />
+                                <img src={D1} alt="" />
                             </div>
                             Dashboard
                         </div>
@@ -89,45 +98,45 @@ const Navbar = () => {
     return (
         <>
             {/* <div>
-            <div className="navbar bg-base-100 fixed top-0 z-10">
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
+                <div className="navbar bg-base-100 fixed top-0 z-10">
+                    <div className="navbar-start">
+                        <div className="dropdown">
+                            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-5 w-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M4 6h16M4 12h8m-8 6h16" />
+                                </svg>
+                            </div>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                {links}
+                            </ul>
                         </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        <a className="btn btn-ghost text-xl">GoZayaan</a>
+                    </div>
+                    <div className="navbar-center hidden lg:flex">
+                        <ul className="menu menu-horizontal px-1">
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">GoZayaan</a>
+                    <div className="navbar-end">
+                        <a className="btn btn-primary">Sign in</a>
+                    </div>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        {links}
-                    </ul>
-                </div>
-                <div className="navbar-end">
-                    <a className="btn btn-primary">Sign in</a>
-                </div>
-            </div>
-        </div> */}
-            <div className="max-w-6xl mx-auto flex justify-between items-center border-b py-3 px-3">
+            </div> */}
+            <div className="max-w-6xl mx-auto flex justify-between items-center border-b px-3">
                 <div className="">
-                    <div className="w-12">
-                        <img src={Go} alt="" />
+                    <div className="w-20">
+                        <img src={L1} alt="" />
                     </div>
                 </div>
                 <div className="flex-1 hidden md:block">
@@ -136,29 +145,29 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="hidden md:flex justify-center items-center">
-                    {
+                    {/* {
                         user && (<div className="avatar">
                             <div className="w-10 rounded-full mr-3 border">
                                 <img src={man} />
                             </div>
                         </div>)
-                    }
+                    } */}
                     {
                         user ? <button onClick={handleSignOut} className="rounded bg-blue-950 text-white px-5 py-2">Sign Out</button>
                             : <Link to='/login' className="rounded bg-blue-950 text-white px-5 py-2">Sign In</Link>
                     }
                 </div>
                 <div className="flex-end justify-center items-center md:hidden text-2xl">
-                    {
+                    {/* {
                         user && (<div className="avatar">
                             <div className="w-10 rounded-full mr-3 border">
                                 <img src={man} />
                             </div>
                         </div>)
-                    }
+                    } */}
                     {
                         open ? <button onClick={() => setOpen(!open)} className=""><AiOutlineClose /> </button>
-                            : <button onClick={() => setOpen(!open)} className=""><RiMenu2Fill /></button>
+                            : <button onClick={() => setOpen(!open)} className=""><IoMenuSharp /></button>
 
                     }
                     {
@@ -190,6 +199,22 @@ const Navbar = () => {
                     }
                 </div>
             </div>
+            {/* <div className="absolute z-10 text-white w-full mx-auto ">
+                <div className="max-w-6xl mx-auto flex justify-between items-center">
+                    <div className="flex items-center">
+                        <div className="w-16">
+                            <img src={L1} alt="" />
+                        </div>
+                        <div className="ml-5 flex text-xl space-x-5">
+                            {navlinks}
+                        </div>
+                    </div>
+                    <div className="text-xl">
+                        <h1>Log in | Sign up</h1>
+                    </div>
+                </div>
+            </div> */}
+
         </>
     );
 };

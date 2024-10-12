@@ -1,6 +1,8 @@
 import React from 'react';
 import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
 import goZayaan from '../assets/images/logo2.jpg'
+import Logo from '../assets/images/L1.png'
+
 
 // Create styles
 const styles = StyleSheet.create({
@@ -64,7 +66,7 @@ const TicketPDF = ({ ticket }) => {
         <Document style={{ width: '100%', height: '100vh' }}>
             <Page size="A4">
                 <View style={styles.section}>
-                    <Image style={{ width: '30px' }} src={goZayaan}></Image>
+                    <Image style={{ width: '30px' }} src={Logo}></Image>
                     <Text style={{ fontSize: '12px' }}>www.shafabd.com</Text>
                     <View style={styles.horizontalLine}></View>  {/* Horizontal Line */}
                     <Text style={{ fontSize: '16px', fontWeight: 'bold' }}>E-Ticket</Text>
