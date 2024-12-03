@@ -86,7 +86,7 @@ const Login = () => {
                             </div> */}
                         </div>
                     </div>
-                    <p className='text-right hover:underline cursor-pointer'>Forget Password?</p>
+                    {/* <p className='text-right hover:underline cursor-pointer'>Forget Password?</p> */}
                     <input className='bg-blue-900 text-white font-semibold p-3 rounded-lg cursor-pointer' type="submit" value="Sign In" />
                 </form>
                 {

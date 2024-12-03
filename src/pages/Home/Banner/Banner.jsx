@@ -11,7 +11,7 @@ const Banner = () => {
         <div className='bg-gray-200 text-white'>
             <div className='relative banner object-contain h-[450px] bg-no-repeat flex flex-col justify-center space-y-3'>
                 <div className='ml-2 md:ml-40 space-y-4'>
-                    <h1 className='text-white text-3xl'>Discover the vibrant hues of autumn</h1>
+                    <h1 className='text-white text-3xl'>Discover the vibrant hues of winter</h1>
                     <h1 className='text-white'>Fares from BDT 4000*</h1>
                     <h1 className=''><button onClick={handleButton} className='p-4 rounded-2xl border-2 border-white font-semibold hover:bg-white hover:text-red-900'>Book Now</button></h1>
                 </div>
@@ -36,8 +36,8 @@ const Banner = () => {
                     </div>
                     <div className='w-[200px] border-2 p-3 rounded-xl'>
                         <h1 className='uppercase'>Journey Date</h1>
-                        <h1><span className='font-bold text-blue-900 text-xl'>29</span> june'24</h1>
-                        <h3>Saturday</h3>
+                        <h1><span className='font-bold text-blue-900 text-xl'>04</span> Dec'24</h1>
+                        <h3>Wednesday</h3>
                     </div>
                     <div className='w-[200px] border-2 p-3 rounded-xl'>
                         <h1 className='uppercase'>Return Date</h1>
