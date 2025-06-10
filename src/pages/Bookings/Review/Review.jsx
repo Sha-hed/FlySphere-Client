@@ -5,10 +5,10 @@ import { useContext } from "react";
 import { DetailsContext } from "../Bookings/Bookings";
 const Review = () => {
     const { flight, date, from, to, c, total } = useContext(DetailsContext);
-    console.log({ flight, location, date, from, to, c, total });
-    console.log(date);
+    // console.log({ flight, location, date, from, to, c, total });
+    // console.log(date);
     const journeyTime = moment(date).format('dddd, DD MMM,YYYY')
-    console.log(journeyTime);
+    // console.log(journeyTime);
     const { Airline, Flight_Name, image, From, To, Departure_Time, Arrival_Time, Total_Time, Total_Stops } = flight
     let stops;
     if (Total_Stops === 0) {

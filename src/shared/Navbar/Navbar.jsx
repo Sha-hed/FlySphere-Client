@@ -32,9 +32,9 @@ const Navbar = () => {
                 });
                 setOpen(!open)
                 navigate('/')
-                console.log('User LoggedOut Successfully ', result.user)
+                // console.log('User LoggedOut Successfully ', result.user)
             })
-            .catch(error => console.log(error))
+            .catch(error =>console.log(error))
     }
     const handleUlClick = () => {
         setOpen(!open)

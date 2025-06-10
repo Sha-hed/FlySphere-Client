@@ -14,18 +14,18 @@ const GetFlight = ({ c, adults, child, date, from, to, total, count }) => {
             return data;
         }
     })
-    // console.log(flights)
+    // // console.log(flights)
     const handleCheap = () => {
         setCheap(true)
         setFast(false);
-        console.log('Click korse Handle')
+        // console.log('Click korse Handle')
     }
     const handleFast = () => {
         setCheap(false);
         setFast(true);
-        console.log('Click Korse Fastest eee')
+        // console.log('Click Korse Fastest eee')
     }
-    // console.log('Koyta ache dekbo ami ekn ',flights)
+    // // console.log('Koyta ache dekbo ami ekn ',flights)
     return (
         <div className="mb-5 min-h-screen">
             <div className="flex flex-col md:flex-row gap-5 justify-between bg-white mt-5 p-3 rounded-md">
@@ -44,7 +44,7 @@ const GetFlight = ({ c, adults, child, date, from, to, total, count }) => {
             </div>
             <div>
                 {
-                    flights.length >0 ? (flights?.map(flight => <FlightCard key={flight._id}
+                    flights.length > 0 ? (flights?.map(flight => <FlightCard key={flight._id}
                         c={c}
                         adults={adults}
                         child={child}
@@ -58,7 +58,7 @@ const GetFlight = ({ c, adults, child, date, from, to, total, count }) => {
                         <h1 className="font-semibold text-red-400 text-center">There are no available Flights based on your query.</h1>
                         <h1 className="font-semibold text-red-400 text-center">Please try clearing some filters or try searching again.</h1>
                     </div>)
-// className="space-y-2 flex flex-col items-center justify-center mt-5 md:mt-10 mx-auto"
+                    // className="space-y-2 flex flex-col items-center justify-center mt-5 md:mt-10 mx-auto"
                 }
             </div>
         </div>

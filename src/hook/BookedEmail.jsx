@@ -5,7 +5,7 @@ import useAxiosCommon from "./useAxiosCommon";
 
 const BookedEmail = () => {
     const { user, loading } = AuthHook();
-    console.log(user?.displayName, user?.email);
+    // console.log(user?.displayName, user?.email);
     const axiosCommon = useAxiosCommon();
     const { data: isBooked = false, refetch } = useQuery({
         queryKey: ['book'],

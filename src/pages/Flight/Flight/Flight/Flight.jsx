@@ -14,7 +14,7 @@ const Flight = () => {
     const [from, setFrom] = useState('aa');
     const [to, setTo] = useState('bb');
     let total = adults + child;
-    console.log('Finding Dat man ', journeyTime);
+    // console.log('Finding Dat man ', journeyTime);
     return (
         <div className="">
             <Form

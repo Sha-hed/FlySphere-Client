@@ -30,7 +30,7 @@ const ViewFlight = () => {
       if (result.isConfirmed) {
         // Write Deleting Code
         const { data } = await axiosCommon.delete(`/deleteFlight/${id}`);
-        console.log(data);
+        // console.log(data);
         if (data.deletedCount) {
           Swal.fire({
             title: "Deleted!",

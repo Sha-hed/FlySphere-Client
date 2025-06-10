@@ -12,7 +12,7 @@ const Bookings = () => {
     const to = location?.state?.to;
     const c = location?.state?.c;
     const total = location?.state?.total;
-    console.log(location);
+    // console.log(location);
     const flightDetails = { flight, date, from, to, c, total }
     return (
         <DetailsContext.Provider value={flightDetails}>

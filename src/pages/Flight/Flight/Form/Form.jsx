@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-const Form = ({ c, setC, adults, setAdults, child, setChild, setDate, setFrom, setTo, count, setCount }) => {
+const Form = ({ c, setC, adults, setAdults, child, setChild, setDate, setFrom, setTo, count, setCount, to, from }) => {
     const [a, setA] = useState(false);
+    const today = new Date().toISOString().split("T")[0];
     // const [c, setC] = useState('Economy');
     // const [adults, setAdults] = useState(1);
     // const [children, setChildren] = useState(0);
@@ -10,23 +11,23 @@ const Form = ({ c, setC, adults, setAdults, child, setChild, setDate, setFrom, s
     // const [to, setTo] = useState('');
     let total = adults + child;
     const airports = [
-        { city: 'Dhaka', name: 'Hazrat Shahjalal International Airport', shortName: 'DAC' },
-        { city: "Cox's Bazar", name: "Cox's Bazar Airport", shortName: 'CXB' },
-        { city: 'Jessore', name: 'Jessore Airport', shortName: 'JSR' },
-        { city: 'Chittagong', name: 'Shah Amanat International Airport', shortName: 'CGP' },
-        { city: "Saidpur", name: 'Saidpur Airport', shortName: 'SPD' },
         { city: 'Sylhet', name: 'Osmani International Airport', shortName: 'ZYL' },
+        { city: 'Chittagong', name: 'Shah Amanat International Airport', shortName: 'CGP' },
+        { city: "Cox's Bazar", name: "Cox's Bazar Airport", shortName: 'CXB' },
+        { city: 'Dhaka', name: 'Hazrat Shahjalal International Airport', shortName: 'DAC' },
+        { city: 'Jessore', name: 'Jessore Airport', shortName: 'JSR' },
+        { city: "Saidpur", name: 'Saidpur Airport', shortName: 'SPD' },
         // Add more airports as needed
     ];
     const handleDone = () => {
         setA(false);
     }
     const handleSearch = () => {
-        setCount(count+1);
-        // console.log(date)
-        // console.log(from)
-        // console.log(to)
-        // console.log(total)
+        setCount(count + 1);
+        // // console.log(date)
+        // // console.log(from)
+        // // console.log(to)
+        // // console.log(total)
     }
     return (
         <div className="max-w-7xl mx-auto my-5 md:my-10">
@@ -34,42 +35,38 @@ const Form = ({ c, setC, adults, setAdults, child, setChild, setDate, setFrom, s
                 <div className="border-2 rounded-2xl p-3 text-center w-3/4 md:w-[200px] mx-auto md:mx-0">
                     <h1 className="uppercase font-semibold mb-2">From </h1>
                     <select onChange={(e) => setFrom(e.target.value)} className="text-[#00026e] font-bold outline-none">
-                        {/* {airports.map((airport, index) => (
-                            <option key={index}
-                                value={airport.city}>
+                        <option value="city">--City--</option>
+                        {airports.map((airport, index) => (
+                            <option
+                                key={index}
+                                value={airport.city}
+                                disabled={airport.city === to} // disable if it's selected in "To"
+                            >
                                 {airport.city}
                             </option>
-                        ))} */}
-                        <option value="city">--City--</option>
-                        <option value="Dhaka">Dhaka</option>
-                        <option value="Cox's Bazar">Cox's Bazar</option>
-                        <option value="Jessore">Jessore</option>
-                        <option value="Chittagong">Chittagong</option>
-                        <option value="Saidpur">Saidpur</option>
-                        <option value="Sylhet">Sylhet</option>
+                        ))}
                     </select>
+
                 </div>
                 <div className="border-2 rounded-2xl p-3 text-center w-3/4 md:w-[200px] mx-auto md:mx-0">
                     <h1 className="uppercase font-semibold mb-2">To </h1>
                     <select onChange={(e) => setTo(e.target.value)} className="text-[#00026e] font-bold outline-none">
-                        {/* {airports.map((airport, index) => (
-                            <option className="block font-bold" key={index}
-                                value={airport.city}>
+                        <option value="city">--City--</option>
+                        {airports.map((airport, index) => (
+                            <option
+                                key={index}
+                                value={airport.city}
+                                disabled={airport.city === from} // disable if it's selected in "From"
+                            >
                                 {airport.city}
                             </option>
-                        ))} */}
-                        <option value="city">--City--</option>
-                        <option value="Dhaka">Dhaka</option>
-                        <option value="Cox's Bazar">Cox's Bazar</option>
-                        <option value="Jessore">Jessore</option>
-                        <option value="Chittagong">Chittagong</option>
-                        <option value="Saidpur">Saidpur</option>
-                        <option value="Sylhet">Sylhet</option>
+                        ))}
                     </select>
+
                 </div>
                 <div className="border-2 rounded-2xl p-3 text-center w-3/4 md:w-[200px] mx-auto md:mx-0">
                     <h1 className="uppercase font-semibold mb-2">Journey Date </h1>
-                    <input onChange={(e) => setDate(e.target.value)} className="text-[#00026e] font-bold" type="date" name="" id="" />
+                    <input min={today} onChange={(e) => setDate(e.target.value)} className="text-[#00026e] font-bold" type="date" name="" id="" />
                 </div>
                 <div className="relative border-2 rounded-2xl p-3  cursor-pointer text-center w-3/4 md:w-[200px] mx-auto md:mx-0">
                     <button onClick={() => setA(true)} className="uppercase font-semibold mb-2">Traveller, Class </button>

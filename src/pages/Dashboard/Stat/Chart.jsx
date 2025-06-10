@@ -76,7 +76,7 @@ const Chart = () => {
         queryKey: ['payment'],
         queryFn: async () => {
             const { data } = await axiosCommon.get('/Airline')
-            // console.log(data);
+            // // console.log(data);
             return data;
         }
     })
@@ -84,20 +84,20 @@ const Chart = () => {
     const getUser = async () => {
         const { data } = await axiosCommon.get('/users')
         setUse(data.length)
-        // console.log('users ', data.length)
+        // // console.log('users ', data.length)
         // return data;
     }
     const bookedFlight = async () => {
         const { data } = await axiosCommon.get('/payment')
         setBook(data.length)
-        // console.log('booked ', data.length)
+        // // console.log('booked ', data.length)
         // return data;
     }
     const totalPrice = async () => {
         const { data } = await axiosCommon.get('/totalEarned')
         setEarn(data[0].totalEarned)
 
-        // console.log('Earned ', data[0].totalEarned)
+        // // console.log('Earned ', data[0].totalEarned)
         // return data;
     }
 
@@ -113,7 +113,7 @@ const Chart = () => {
         totalFlight()
     }, [])
 
-    console.log("Summary : ", use, book, earn, flight)
+    // console.log("Summary : ", use, book, earn, flight)
 
     return (
         <div className='bg-white min-h-screen'>

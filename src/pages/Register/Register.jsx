@@ -16,12 +16,19 @@ import { updateProfile } from 'firebase/auth';
 import useAxiosCommon from '../../hook/useAxiosCommon';
 
 const Register = () => {
+    const location = useLocation();
+    const goThere = location?.state?.from || '/';
+    const c = location?.state?.c
+    const date = location?.state?.date
+    const email = location?.state?.email
+    const fullName = location?.state?.fullName
+    const phone = location?.state?.phone
+    const total = location?.state?.total
     const { createUser } = AuthHook();
     const axiosCommon = useAxiosCommon();
     const [open, setOpen] = useState(false);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
-    const location = useLocation();
     const jao = location?.state?.from || '/';
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -34,17 +41,17 @@ const Register = () => {
             .then(async (result) => {
                 const user = { Email: email, phoneNumber: phone, userRole: role }
                 const { data } = await axiosCommon.post('/users', user)
-                console.log(data);
+                // console.log(data);
                 toast.success('Signed Up Successfully!', {
                     duration: 4000,
                     position: 'top-right',
                 });
-                navigate(jao)
-                console.log(result.user);
+                navigate(jao, { state: { c, date, email, fullName, phone, total } })
+                // console.log(result.user);
             })
             .catch(error => setError(error.message))
     };
-    console.log(errors);
+    // console.log(errors);
     return (
         <div className='bg-gray-200 py-10'>
             <div className='w-[90%] md:w-[600px] px-5 py-10 mx-auto bg-white shadow-xl border-t-4 border-blue-900 rounded'>

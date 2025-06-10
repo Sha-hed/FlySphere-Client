@@ -5,6 +5,7 @@ import CheckOutForm from "../CheckOutForm/CheckOutForm";
 
 //TODO: Add Publishible Key
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PK)
+
 const Payment = () => {
     return (
         <div>

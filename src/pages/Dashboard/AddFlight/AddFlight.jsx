@@ -27,9 +27,9 @@ const AddFlight = () => {
             const image = await data?.data?.display_url
             const flightDetails = { Flight_Name, Airline, image, From, To, Departure_Time, Arrival_Time, Total_Time, Total_Stops, Fare }
             // await setImage(data?.data?.display_url)
-            console.log(flightDetails)
+            // console.log(flightDetails)
             const res = await axiosCommon.post('/addFlight', flightDetails);
-            console.log(res.data);
+            // console.log(res.data);
             if (res.data.insertedId) {
                 Swal.fire({
                     position: "top",
@@ -43,11 +43,11 @@ const AddFlight = () => {
                 }, 1500)
             }
         } catch (error) {
-            console.log(error)
+            // console.log(error)
         }
         // const flightDetails = { Airline, image, From, To, Departure_Time, Arrival_Time, Total_Time, Total_Stops, Fare }
         // const res = await axiosCommon.post('/addFlight', flightDetails);
-        // console.log(res.data);
+        // // console.log(res.data);
         // if (res.data.insertedId) {
         //     Swal.fire({
         //         position: "top",

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import axios from "axios";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import useAxiosCommon from "../../../hook/useAxiosCommon";
@@ -7,7 +8,7 @@ import Swal from "sweetalert2";
 const UpdateDetails = () => {
     const navigate = useNavigate()
     const flight = useLoaderData()
-    console.log(flight)
+    // console.log(flight)
     const { _id: id, Airline, Flight_Name, From, To, Departure_Time, Arrival_Time, Total_Time, Total_Stops, image, Fare } = flight
     const axiosCommon = useAxiosCommon();
     const handleSubmit = async (e) => {
@@ -29,8 +30,8 @@ const UpdateDetails = () => {
             // const image = await data?.data?.display_url
             const flightDetails = { id, Flight_Name, Airline, image, From, To, Departure_Time, Arrival_Time, Total_Time, Total_Stops, Fare }
             const res = await axiosCommon.patch('/updateFlight', flightDetails);
-            console.log(res.data);
-            console.log(res.data.modifiedCount)
+            // console.log(res.data);
+            // console.log(res.data.modifiedCount)
             if (res.data.modifiedCount) {
                 Swal.fire({
                     position: "top",
@@ -44,7 +45,7 @@ const UpdateDetails = () => {
                 }, 1500)
             }
         } catch (error) {
-            console.log(error)
+            // console.log(error)
         }
     }
     return (

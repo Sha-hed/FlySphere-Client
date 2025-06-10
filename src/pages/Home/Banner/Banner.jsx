@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import plane from '../../../assets/images/Plane2.png'
 import { IoSearch } from "react-icons/io5";
 import './banner.css'

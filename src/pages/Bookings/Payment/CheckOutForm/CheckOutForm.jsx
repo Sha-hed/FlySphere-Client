@@ -33,7 +33,7 @@ const CheckOutForm = () => {
             });
     }, []);
     const handleSubmit = async (event) => {
-        console.log('Payment Submit')
+        // console.log('Payment Submit')
         // Block native form submission.
         event.preventDefault();
         if (!stripe || !elements) {
@@ -50,10 +50,10 @@ const CheckOutForm = () => {
             card,
         });
         if (error) {
-            console.log('payment Error ', error)
+            // console.log('payment Error ', error)
             setError(error.message)
         } else {
-            console.log('Payment Method ', paymentMethod)
+            // console.log('Payment Method ', paymentMethod)
             setError('');
         }
 
@@ -68,7 +68,7 @@ const CheckOutForm = () => {
         if (cardConfirmError) {
             setError(cardConfirmError)
         } else {
-            console.log("Payment Intent ", paymentIntent)
+            // console.log("Payment Intent ", paymentIntent)
             if (paymentIntent.status === 'succeeded') {
                 const payment = {
                     Name: fullName,
@@ -83,8 +83,8 @@ const CheckOutForm = () => {
                 }
                 const { data } = await axiosCommon.post('/payment', payment)
                 refetch();
-                console.log(data);
-                console.log('Payment Successfully')
+                // console.log(data);
+                // console.log('Payment Successfully')
                 Swal.fire({
                     title: "Booking Confirmed",
                     text: "Thanks for Booking",

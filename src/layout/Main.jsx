@@ -5,11 +5,11 @@ import Footer from "../shared/Footer/Footer";
 
 const Main = () => {
     const location = useLocation();
-    console.log(location)
+    // console.log(location)
     const isPrint = location.pathname.includes('downloadPDF')
-    console.log(isPrint)
+    // console.log(isPrint)
     const isDash = location.pathname.includes('dashboard')
-    console.log('Dash Kina ',isDash)
+    // console.log('Dash Kina ',isDash)
     const confused = (isPrint || isDash) || false;
     return (
         <div>
@@ -21,7 +21,7 @@ const Main = () => {
             } */}
             <Outlet></Outlet>
             {
-                confused || <Footer/>
+                confused || <Footer />
             }
         </div>
     );

@@ -10,11 +10,11 @@ const MyBookings = () => {
         enabled: !loading,
         queryFn: async () => {
             const { data } = await axiosCommon.get(`bookedByUser?email=${user?.email}`);
-            console.log(data)
+            // console.log(data)
             return data;
         }
     })
-    // console.log(ticket[0].Name);
+    // // console.log(ticket[0].Name);
     return (
         <div className="bg-[#ebf0f4] min-h-screen">
             <div className=" max-w-7xl mx-auto">

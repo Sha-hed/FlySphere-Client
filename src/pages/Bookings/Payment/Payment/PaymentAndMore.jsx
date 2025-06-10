@@ -14,16 +14,16 @@ const PaymentAndMore = () => {
     const total = location?.state?.total;
     const ticketClass = location?.state?.c;
     const travelDate = location?.state?.date;
-
+    // console.log('Location er info gula load hoy? ', location);
     //For Fare Data
     const flight = useLoaderData();
-    const {Flight_Name, image, Fare, From, To, } = flight
+    const { Flight_Name, image, Fare, From, To, } = flight
     const tfare = Fare * total;
     const tax = 150;
     const subTotal = tfare + tax
     const charge = 350;
     const pay = tax + subTotal + charge;
-
+    // console.log("Flight Details Load HOise ?? ", flight);
     //PassFlight Details
 
     const passDetails = { fullName, email, phone, total, flight, ticketClass, travelDate, pay }
@@ -67,7 +67,7 @@ const PaymentAndMore = () => {
                         <h1>BDT {subTotal}</h1>
                     </div>
                     <div className='flex justify-between px-5'>
-                        <h1>Convenience Charge </h1>
+                        <h1>Convenience Charge</h1>
                         <h1>BDT 350</h1>
                     </div>
                     <div className='flex justify-between bg-[#9ed4eb] px-5 py-5'>

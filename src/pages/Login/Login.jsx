@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from "react-icons/fc";
 import { FaEnvelope } from "react-icons/fa";
@@ -11,7 +12,15 @@ import toast from 'react-hot-toast';
 import useAxiosCommon from '../../hook/useAxiosCommon';
 const Login = () => {
     const location = useLocation();
-    const jao = location?.state?.from || '/';
+    const goThere = location?.state?.from || '/';
+    const c = location?.state?.c
+    const date = location?.state?.date
+    const email = location?.state?.email
+    const fullName = location?.state?.fullName
+    const phone = location?.state?.phone
+    const total = location?.state?.total
+    // console.log("Login Page, Location : ", location);
+    // console.log("Login Page StateInfo : ", c, date, email, fullName, phone, total)
     const navigate = useNavigate();
     const { user, signIn, GoogleSignIn } = AuthHook();
     const [open, setOpen] = useState(false);
@@ -27,26 +36,27 @@ const Login = () => {
                     duration: 4000,
                     position: 'top-right',
                 });
-                navigate(jao)
-                console.log('from result ', result.user)
+                // // console.log("Print hoy na ken vai")
+                navigate(goThere, { state: { c, date, email, fullName, phone, total } })
+                //// console.log('from result ', result.user)
             })
             .catch(error => {
                 setError(error.message)
             })
     };
-    console.log(errors);
+    // console.log(errors);
     const handleGoogle = () => {
         GoogleSignIn()
             .then(async (result) => {
                 const u = { Email: result?.user?.email, phoneNumber: '01812345678', userRole: 'User' }
                 const { data } = await axiosCommon.post('/users', u)
-                console.log(data);
+                // console.log(data);
                 toast.success('logged in successfully!', {
                     duration: 4000,
                     position: 'top-right',
                 });
-                navigate(jao)
-                console.log('From Google Sign In ', result.user)
+                navigate(goThere, { state: { c, date, email, fullName, phone, total } })
+                //// console.log('From Google Sign In ', result.user)
             })
             .catch(error => setError(error.message))
     }
@@ -92,7 +102,11 @@ const Login = () => {
                 {
                     error && <p className='text-center text-lg font-semibold text-red-400'>{error}</p>
                 }
-                <p className='text-center mt-3'>Don't have an Account? <Link to='/register' className='hover:underline text-blue-900 font-medium'>Sign Up</Link></p>
+                <p className='text-center mt-3'>Don't have an Account?
+                    <Link to='/register'
+                        state={{ from: goThere, c, date, email, fullName, phone, total }}
+                        className='hover:underline text-blue-900 font-medium'
+                    >Sign Up</Link></p>
 
             </div>
         </div>

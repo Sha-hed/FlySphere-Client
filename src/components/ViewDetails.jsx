@@ -5,12 +5,12 @@ import TicketPDF from "./TicketPDF";
 
 const ViewDetails = () => {
     const ticket = useLoaderData();
-    console.log(ticket);
-    
+    // console.log(ticket);
+
 
     return (
-        <PDFViewer style={{ width: '100%', height: '100vh'}}>
-            <TicketPDF ticket={ticket}/>
+        <PDFViewer style={{ width: '100%', height: '100vh' }}>
+            <TicketPDF ticket={ticket} />
         </PDFViewer>
     );
 };
